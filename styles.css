@@ -1,4 +1,4 @@
-/* Importing Google Font */
+/* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Nunito:wght@300;400;600&display=swap');
 
 /* General Styles */
@@ -14,10 +14,11 @@ body {
 /* Centered Header */
 header {
     background-color: #A7CDA0; /* Exact green from logo */
-    padding: 0px;
+    padding: 20px;
     border-radius: 0 0 20px 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -25,7 +26,7 @@ header {
 /* Logo */
 .logo {
     height: 120px;
-    width: 220px; /* Slightly bigger for better balance */
+    width: 220px;
     max-width: 75%;
 }
 
@@ -33,14 +34,11 @@ header {
 .tagline {
     font-size: 18px;
     font-weight: 300;
-    font-color: white;
-    color: #ffffff; /* White text for contrast */
+    color: white; /* Fixed incorrect "font-color" */
     margin-top: 10px;
     font-family: 'Nunito', sans-serif;
     opacity: 0.9;
 }
-
-
 
 /* Navigation */
 nav ul {
@@ -51,7 +49,7 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding: 12px 0;
+    padding: 12px 20px;
     border-radius: 30px;
     width: fit-content;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
@@ -85,6 +83,7 @@ h2 {
     font-size: 26px;
     color: #FF6B6B; /* Soft coral pink */
     font-weight: 600;
+    text-align: center;
 }
 
 p {
@@ -93,9 +92,8 @@ p {
     max-width: 600px;
     margin: 10px auto;
     color: #555;
+    text-align: center;
 }
-
-
 
 /* Footer */
 footer {
@@ -106,6 +104,7 @@ footer {
     margin-top: 40px;
 }
 
+/* Chat Container */
 #chat-container {
     max-width: 500px;
     margin: 50px auto;
@@ -115,10 +114,7 @@ footer {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    color: #333;
-}
-
+/* Chat Messages */
 #messages {
     height: 300px;
     overflow-y: auto;
@@ -127,22 +123,27 @@ h2 {
     border-radius: 5px;
     margin-bottom: 10px;
     background: #f9f9f9;
-    text-align: left;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Message styling */
-p {
+/* Message Styling */
+.message {
     background: #A7CDA0;
-    padding: 8px;
-    border-radius: 5px;
+    padding: 10px 15px;
+    border-radius: 10px;
     color: white;
     margin: 5px 0;
     font-size: 16px;
-    opacity: 1;
+    max-width: 70%;
+    text-align: center;
     transition: background 0.3s, opacity 0.3s;
 }
 
-p strong {
+/* Message Sender Name */
+.message strong {
     color: #333;
 }
 
