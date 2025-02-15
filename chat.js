@@ -21,13 +21,21 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// Send Message Function
+// Generate a random username (if not already set)
+if (!sessionStorage.getItem("username")) {
+    const randomUsername = "User" + Math.floor(Math.random() * 10000);
+    sessionStorage.setItem("username", randomUsername);
+}
+const username = sessionStorage.getItem("username");
+
+
 function sendMessage() {
     const messageInput = document.getElementById("messageInput");
     const messageText = messageInput.value.trim();
 
     if (messageText !== "") {
         db.collection("messages").add({
+            username: username, // Include username
             text: messageText,
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         })
@@ -37,11 +45,12 @@ function sendMessage() {
     }
 }
 
-// Listen for New Messages in Real-Time
+
 db.collection("messages").orderBy("timestamp").onSnapshot(snapshot => {
     let messagesHTML = "";
     snapshot.forEach(doc => {
-        messagesHTML += `<p>${doc.data().text}</p>`;
+        const data = doc.data();
+        messagesHTML += `<p><strong>${data.username}:</strong> ${data.text}</p>`;
     });
     document.getElementById("messages").innerHTML = messagesHTML;
 });
