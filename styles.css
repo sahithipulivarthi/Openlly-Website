@@ -95,22 +95,7 @@ p {
     color: #555;
 }
 
-/* Buttons */
-button {
-    background-color: #FF6B6B; /* Soft coral pink */
-    color: white;
-    border: none;
-    padding: 14px 26px;
-    font-size: 18px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
 
-button:hover {
-    background-color: #E05C5C;
-}
 
 /* Footer */
 footer {
@@ -119,22 +104,6 @@ footer {
     padding: 20px;
     border-radius: 20px 20px 0 0;
     margin-top: 40px;
-}
-
-.chat-button {
-    display: inline-block;
-    background-color: #A7CDA0; /* Same green color */
-    color: white;
-    padding: 12px 24px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.chat-button:hover {
-    background-color: #91AD85;
 }
 
 #chat-container {
@@ -161,6 +130,7 @@ h2 {
     text-align: left;
 }
 
+/* Message styling */
 p {
     background: #A7CDA0;
     padding: 8px;
@@ -168,12 +138,26 @@ p {
     color: white;
     margin: 5px 0;
     font-size: 16px;
+    opacity: 1;
+    transition: background 0.3s, opacity 0.3s;
 }
 
 p strong {
     color: #333;
 }
 
+/* Fade-in effect for new messages */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Input and Button */
 input {
     width: 80%;
     padding: 10px;
@@ -189,4 +173,9 @@ button {
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #91AD85;
 }
