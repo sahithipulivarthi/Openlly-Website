@@ -16,6 +16,32 @@ const firebaseConfig = {
   measurementId: "G-WCPHMVTJ17"
 };
 
+
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+// Send Message Function
+function sendMessage() {
+    const messageInput = document.getElementById("messageInput");
+    const messageText = messageInput.value.trim();
+
+    if (messageText !== "") {
+        db.collection("messages").add({
+            text: messageText,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        })
+        .then(() => {
+            messageInput.value = ""; // Clear input field after sending
+        });
+    }
+}
+
+// Listen for New Messages in Real-Time
+db.collection("messages").orderBy("timestamp").onSnapshot(snapshot => {
+    let messagesHTML = "";
+    snapshot.forEach(doc => {
+        messagesHTML += `<p>${doc.data().text}</p>`;
+    });
+    document.getElementById("messages").innerHTML = messagesHTML;
+});
