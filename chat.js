@@ -12,6 +12,8 @@ const firebaseConfig = {
 // Initialize Firebase App
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
+console.log("Firebase initialized:", firebase.app().name);
+
 
 // Generate a random username for each session
 if (!sessionStorage.getItem("username")) {
