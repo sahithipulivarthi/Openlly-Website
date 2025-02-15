@@ -20,6 +20,17 @@ if (!sessionStorage.getItem("username")) {
 }
 const username = sessionStorage.getItem("username");
 
+// Test Firebase connection
+db.collection("test").add({
+    message: "Testing Firebase connection",
+    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+}).then(() => {
+    console.log("Firebase is working! ✅");
+}).catch(error => {
+    console.error("Firebase error ❌:", error);
+});
+
+
 // Function to send a message to Firestore
 function sendMessage() {
     const messageInput = document.getElementById("messageInput");
