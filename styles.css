@@ -1,6 +1,9 @@
+/* Importing Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Nunito:wght@300;400;600&display=swap');
+
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #FAFAFA; /* Soft neutral background */
     color: #333;
     margin: 0;
@@ -15,15 +18,26 @@ header {
     border-radius: 0 0 20px 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 /* Logo */
 .logo {
-    height: 200px;
-    width: 200px; /* Increased size */
+    height:220px;
+    width: 220px; /* Slightly bigger for better balance */
     max-width: 100%;
+}
+
+/* Tagline */
+.tagline {
+    font-size: 18px;
+    font-weight: 300;
+    color: #ffffff; /* White text for contrast */
+    margin-top: 10px;
+    font-family: 'Nunito', sans-serif;
+    opacity: 0.9;
 }
 
 
