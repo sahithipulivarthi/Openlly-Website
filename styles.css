@@ -136,3 +136,26 @@ footer {
 .chat-button:hover {
     background-color: #91AD85;
 }
+#messages {
+    height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    text-align: left;
+}
+
+p {
+    background: #A7CDA0;
+    padding: 8px;
+    border-radius: 5px;
+    color: white;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+p strong {
+    color: #333;
+}
