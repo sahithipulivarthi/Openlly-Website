@@ -21,31 +21,31 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// Generate a random username (if not already set)
+// Generate a random username (if not already set for this session)
 if (!sessionStorage.getItem("username")) {
     const randomUsername = "User" + Math.floor(Math.random() * 10000);
     sessionStorage.setItem("username", randomUsername);
 }
 const username = sessionStorage.getItem("username");
 
-
+// Function to send a message
 function sendMessage() {
     const messageInput = document.getElementById("messageInput");
     const messageText = messageInput.value.trim();
 
     if (messageText !== "") {
         db.collection("messages").add({
-            username: username, // Include username
+            username: username, // Store the user's name
             text: messageText,
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         })
         .then(() => {
-            messageInput.value = ""; // Clear input field after sending
+            messageInput.value = ""; // Clear input after sending
         });
     }
 }
 
-
+// Listen for new messages in real-time and update chat display
 db.collection("messages").orderBy("timestamp").onSnapshot(snapshot => {
     let messagesHTML = "";
     snapshot.forEach(doc => {
