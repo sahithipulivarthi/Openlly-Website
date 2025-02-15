@@ -1,25 +1,12 @@
-// ✅ Wait until Firebase is fully loaded before using it
+// ✅ Wait until the document is loaded before using Firebase
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ✅ Ensure Firebase is defined
+    // ✅ Ensure Firebase is loaded before accessing it
     if (typeof firebase === "undefined") {
-        console.error("❌ Firebase is not loaded. Check your CDN script paths.");
+        console.error("❌ Firebase is not loaded. Check your script paths in HTML.");
         return;
     }
 
-    // ✅ Firebase Configuration
-    const firebaseConfig = {
-        apiKey: "AIzaSyDK6SH0AHg91V6r32oJqND0HSwVVWJEFGo",
-        authDomain: "openlly-chat.firebaseapp.com",
-        projectId: "openlly-chat",
-        storageBucket: "openlly-chat.appspot.com",
-        messagingSenderId: "688100647446",
-        appId: "1:688100647446:web:aa691dfc484ed712a2cb37",
-        measurementId: "G-WCPHMVTJ17"
-    };
-
-    // ✅ Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
 
     console.log("✅ Firebase initialized:", firebase.app().name);
@@ -79,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         document.getElementById("messages").innerHTML = messagesHTML;
-
         console.log("✅ Loaded", snapshot.size, "messages");
     });
 
