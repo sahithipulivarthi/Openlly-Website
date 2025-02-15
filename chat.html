@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Chat</title>
 
-    <!-- Firebase CDN -->
+    <!-- ✅ Load Firebase using CDN (No import statements needed) -->
     <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"></script>
 
@@ -19,10 +19,7 @@
         <button id="sendButton">Send</button>
     </div>
 
-    <!-- Load JavaScript File -->
+    <!-- ✅ Load Firebase Config and JavaScript AFTER Firebase scripts -->
     <script src="chat.js"></script>
-    <script type="module">
-
-</script>
 </body>
 </html>
