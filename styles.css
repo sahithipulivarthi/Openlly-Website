@@ -10,8 +10,8 @@ body {
 
 /* Centered Header */
 header {
-    background-color: #A9C79E; /* Matching soft green */
-    padding: 40px;
+    background-color: #A7CDA0; /* Exact green from logo */
+    padding: 50px;
     border-radius: 0 0 20px 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
     display: flex;
@@ -21,8 +21,10 @@ header {
 
 /* Logo */
 .logo {
-    width: 160px; /* Adjust size as needed */
+    width: 200px; /* Increased size */
+    max-width: 100%;
 }
+
 
 
 /* Navigation */
