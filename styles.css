@@ -21,6 +21,7 @@ header {
 
 /* Logo */
 .logo {
+    height: 200px;
     width: 200px; /* Increased size */
     max-width: 100%;
 }
