@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Chat</title>
 
-    <!-- ✅ Load Firebase using CDN (No import statements needed) -->
+    <!-- ✅ Correct Firebase CDN Links -->
     <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"></script>
-
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,7 +19,24 @@
         <button id="sendButton">Send</button>
     </div>
 
-    <!-- ✅ Load Firebase Config and JavaScript AFTER Firebase scripts -->
+    <!-- ✅ Initialize Firebase in a regular script -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDK6SH0AHg91V6r32oJqND0HSwVVWJEFGo",
+            authDomain: "openlly-chat.firebaseapp.com",
+            projectId: "openlly-chat",
+            storageBucket: "openlly-chat.appspot.com",
+            messagingSenderId: "688100647446",
+            appId: "1:688100647446:web:aa691dfc484ed712a2cb37",
+            measurementId: "G-WCPHMVTJ17"
+        };
+
+        // ✅ Initialize Firebase using CDN (No import statements needed)
+        firebase.initializeApp(firebaseConfig);
+        console.log("✅ Firebase initialized:", firebase.app().name);
+    </script>
+
+    <!-- ✅ Load JavaScript File AFTER Firebase Initialization -->
     <script src="chat.js"></script>
 </body>
 </html>
