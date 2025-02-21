@@ -1,7 +1,7 @@
 // ✅ Wait until the document is loaded before using Firebase
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ✅ Ensure Firebase is loaded before accessing it
+    // ✅ Ensure Firebase is loaded before accessing it 
     if (typeof firebase === "undefined") {
         console.error("❌ Firebase is not loaded. Check your script paths in HTML.");
         return;
