@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    const db = firebase.firestore();
+    const db = firebase.firestore(); 
 
     console.log("✅ Firebase initialized:", firebase.app().name); 
 
